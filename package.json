@@ -1,0 +1,17 @@
+{
+  "name": "progetto_telegram_webpanel",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "nodemon -r dotenv/config app.js"
+  },
+  "dependencies": {
+    "chart.js": "^2.9.3",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.2",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.9.11",
+    "passport": "^0.4.1",
+    "passport-google-oauth": "^2.0.0"
+  }
+}
