@@ -1,0 +1,18 @@
+Le session sono un metodo per salvare informazioni (salvare informazioni di sessione) lato server-side, l'utente non vede nulla.
+Però si hanno dei problemi quando si hanno sistemi distribuiti: si preferisce sistemi stateless (altrimenti è difficile coordinare i server).
+JWT: utile per autenticazione stateless, è l'utente che si occupa di salvare il token e ogni volta lo passa al server.
+
+(I cookie sono utili per lo storage di informazioni client-side
+Differenza cookie / sessione:
+Sessione: server-file 				Cookie: client-side-file
+Sessione: termina quando chiude il browser (+o-)Cookie: può persistere, ha un parametro lifetime
+Sessione: necessita i cookie per funzionare     Cookie: non necessita delle sessioni per funzionare
+)
+
+Tipi di JWT:
+- Complete: tutte le informazioni dell'utente sono nel JWT che quindi va anche criptato (Normalmente tutti possono leggere il JWT)
+- Reference: il JWT contiene una reference (es. id) alle informazioni dell'utente che poi il server va a prendersi. (Posso non criptarlo)
+
+Per salvare i JWT posso usare:
+1 - Web Storage ma è un casino senza un framework che lo gestisca lui perchè devo usare ogni volta le API del browser per modificare gli header
+2 - Cookie: il server aggiunge i cookie alla risposta che l'utente manda assieme ad ogni sua futura risposta (0 codice lato client)
