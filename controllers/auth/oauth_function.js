@@ -19,5 +19,5 @@ module.exports = async (request, accessToken, refreshToken, profile, done) => {
         return done(null,newPanelUser);
     }
     else
-        return done(null,user._doc)
-}
+        return done(null,user._doc);
+};

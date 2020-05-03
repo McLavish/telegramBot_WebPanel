@@ -9,10 +9,7 @@ function generateUserToken(req, res) {
     //MANDO IL COOKIE COSì FA TUTTO IN AUTMATICO YEEEEEE
     res.cookie('jwt', accessToken);
 
-    res.render('auth/authenticated', {
-        //Va convertito in JSON perchè altrimenti ejs mette [Object object] al posto della variabile :/
-        token: JSON.stringify(accessToken)
-    });
+    res.render('auth/authenticated');
 }
 
 router.get('/auth/register', (req, res) => {

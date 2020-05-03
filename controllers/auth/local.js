@@ -17,7 +17,7 @@ passport.use('register', new localStrategy.Strategy(registerPassportConfig, asyn
             first_name: req.body.firstName,
             last_name: req.body.lastName,
             creation_date: Math.floor(Date.now() / 1000)
-        })
+        });
         await user.save();
         return done(null, user);
 }));

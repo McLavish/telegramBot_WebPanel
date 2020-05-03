@@ -1,6 +1,6 @@
 const express = require('express');
 const Chat = require('../models/chat');
-const Chart = require('chart.js');
+//const Chart = require('chart.js');
 const router = new express.Router();
 
 router.get('/secure/chart', async (req, res) => {
@@ -10,7 +10,7 @@ router.get('/secure/chart', async (req, res) => {
 router.get('/secure/chart/dataset', async (req, res) => {
     let hello = await Chat.find({}, {messages: 1});
 
-    const color = Chart.helpers.color;
+    //const color = Chart.helpers.color;
     let datasets = [];
 
     for (const chat of hello) {
@@ -34,6 +34,7 @@ router.get('/secure/chart/dataset', async (req, res) => {
     res.send(datasets);
 });
 
+/*
 router.get('/test', async (req, res) => {
 
     let hello = await Chat.find({}, {messages: 1});
@@ -51,5 +52,6 @@ router.get('/test', async (req, res) => {
 
     res.send(datasets);
 });
+ */
 
 module.exports = router;

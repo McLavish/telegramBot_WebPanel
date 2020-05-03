@@ -13,7 +13,7 @@ const PanelUserSchema = new mongoose.Schema({
     profile_id: String,
     provider: String,
     creation_date: Number
-})
+});
 
 PanelUserSchema.pre('save', async function (next) {
     //Il documento di Mongoose che sta per essere salvato
@@ -23,11 +23,11 @@ PanelUserSchema.pre('save', async function (next) {
         user.password = await bcrypt.hash(user.password, 10);
     }
     next();
-})
+});
 
 PanelUserSchema.methods.checkPassword = async function (password) {
     const user = this;
     return await bcrypt.compare(password, user.password);
-}
+};
 
-module.exports = mongoose.model('PanelUser', PanelUserSchema)
+module.exports = mongoose.model('PanelUser', PanelUserSchema);
