@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Authenticated</title>
+</head>
+<body>
+Authenticated successfully.
+<a href="/?logged=true">bACK TO MeNU</a>
+
+<script type="text/javascript">
+    let token = <%= token %>;
+    sessionStorage.setItem('token', token);
+</script>
+</body>
+</html>
