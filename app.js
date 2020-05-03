@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const passport = require('passport');
+const cookieParser = require('cookie-parser');
 
 const indexRouter = require('./routes');
 const authRouter = require('./routes/auth.routes');
@@ -24,6 +25,8 @@ app.use(
     express.json()
 );
 
+//Uso i cookie così il client non deve fare nulla (Diventa impossibile gestire il localstorage/sessionstorage). Uso il mio programma come se fosse normale solo che posso accedere alle route sicure
+app.use(cookieParser());
 app.use(passport.initialize());
 
 app.use('/public', express.static(__dirname + "/public"));

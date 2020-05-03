@@ -5,6 +5,10 @@ const generateAccessToken = require('../controllers/token_generation');
 
 function generateUserToken(req, res) {
     const accessToken = generateAccessToken(req.user._id);
+
+    //MANDO IL COOKIE COSì FA TUTTO IN AUTMATICO YEEEEEE
+    res.cookie('jwt', accessToken);
+
     res.render('auth/authenticated', {
         //Va convertito in JSON perchè altrimenti ejs mette [Object object] al posto della variabile :/
         token: JSON.stringify(accessToken)

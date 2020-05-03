@@ -25,8 +25,7 @@
                 <button type="button" name="google" class="auto btn btn-success">Login with Google</button>
                 <button type="button" name="facebook" class="auto btn btn-success">Login with Facebook</button>
             <% } else { %>
-                <button type="button" name="register" class="secret btn btn-primary">Accedi alla parte supersegreta :0
-                </button>
+                <a href="/secure/chart" class="auto btn btn-success">Accedi alla parte supersegreta :0</a>
             <% } %>
         </div>
     </div>
@@ -40,34 +39,14 @@
                 openPage(e.target.getAttribute('name'));
             })
         );
-
-        let secretButton = document.querySelector('button.secret');
-
-        if (secretButton)
-            secretButton.addEventListener('click', superSecret)
     });
 
     function openPage(provider) {
-        window.location.href = window.location.href + 'auth/' + provider
+        //altrimenti mi prende dentro la query string e non voglio
+        window.location.href = window.location.href.split('?')[0] + 'auth/' + provider
+
         //sto schifo qua sotto poi fa esplodere il bottone indietro dei browser perchè non aggiunge un nuovo stato alla history :/
         //window.location.replace('/auth/' + provider);
-    }
-
-    async function superSecret() {
-        const myHeaders = new Headers();
-        let token = sessionStorage.getItem('token');
-
-        myHeaders.append('Content-Type', 'application/json');
-        //mettere davanti quello che si è messo in auth/jtoken.js WithAuthScheme
-        myHeaders.append('Authorization', 'jwt ' + token);
-
-        let response = await fetch('/secure/chart', {
-            method: 'GET',
-            headers: myHeaders
-        })
-        let halp = await response.text();
-        document.body.innerHTML = halp;
-
     }
 
 </script>

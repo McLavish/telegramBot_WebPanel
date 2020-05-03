@@ -11,7 +11,6 @@ router.get('/secure/chart/dataset', async (req, res) => {
     let hello = await Chat.find({}, {messages: 1});
 
     const color = Chart.helpers.color;
-
     let datasets = [];
 
     for (const chat of hello) {
