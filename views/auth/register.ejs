@@ -5,13 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Bootstrap 4, from LayoutIt!</title>
+    <title>Registeroni</title>
 
-    <meta name="description" content="Source code generated using layoutit.com">
-    <meta name="author" content="LayoutIt!">
-
-    <link href="public/css/bootstrap.min.css" rel="stylesheet">
-    <link href="public/css/style.css" rel="stylesheet">
+    <link href="../public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../public/css/style.css" rel="stylesheet">
 
   </head>
   <body>
@@ -47,34 +44,34 @@
 			<h3 class="text-center">
 				Since you've come this far, you might as well register
 			</h3>
-			<form role="form">
+			<form role="form" method="post" action="/auth/register">
 				<div class="form-group">
 
 					<label for="inputName">
 						First Name
 					</label>
-					<input type="text" class="form-control" id="inputName" required>
+					<input type="text" class="form-control" id="inputName" name ="inputName" required>
 				</div>
 				<div class="form-group">
 
 					<label for="inputSurname">
 						Last Name
 					</label>
-					<input type="text" class="form-control" id="inputSurname" required>
+					<input type="text" class="form-control" id="inputSurname" name ="inputSurname" required>
 				</div>
 				<div class="form-group">
 					 
 					<label for="inputEmail">
 						Email address
 					</label>
-					<input type="email" class="form-control" id="inputEmail" required>
+					<input type="email" class="form-control" id="inputEmail" name ="inputEmail" required>
 				</div>
 				<div class="form-group">
 					 
 					<label for="inputPassword">
 						Password
 					</label>
-					<input type="password" class="form-control" id="inputPassword" required>
+					<input type="password" class="form-control" id="inputPassword" name ="inputPassword" required Autocomplete>
 				</div>
 				<button type="submit" class="btn btn-primary">
 					Register
@@ -83,9 +80,8 @@
 		</div>
 	</div>
 </div>
-
-    <script src="public/js/jquery.min.js"></script>
-    <script src="public/js/bootstrap.min.js"></script>
-    <script src="public/js/scripts.js"></script>
+    <script src="../public/js/jquery.min.js"></script>
+    <script src="../public/js/bootstrap.min.js"></script>
+    <script src="../public/js/scripts.js"></script>
   </body>
 </html>

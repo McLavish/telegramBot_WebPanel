@@ -11,7 +11,7 @@
 <body>
 <p>HE</p>
 <canvas id="myChart"></canvas>
-<script src="public/Chart.bundle.js"></script>
+<script src="../public/Chart.bundle.js"></script>
 
 <script>
     document.addEventListener('DOMContentLoaded', async (event) => {
@@ -20,7 +20,7 @@
 
     async function Hello () {
 
-        let response = await fetch('/chart');
+        let response = await fetch('/secure/chart/dataset');
         let datasets = await response.json();
 
         let ctx = document.getElementById('myChart').getContext('2d');

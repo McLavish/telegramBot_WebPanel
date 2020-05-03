@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Authenticated</title>
 </head>
 <body>
-$END$
+Authenticated successfully.
+<a href="/?logged=true">bACK TO MeNU</a>
+
+<script type="text/javascript">
+    //Usare ejs con - al posto di = perchè senò mette un escape che fa esplodere il programma.
+    let token = <%- token %>;
+    sessionStorage.setItem('token', token);
+</script>
 </body>
 </html>
