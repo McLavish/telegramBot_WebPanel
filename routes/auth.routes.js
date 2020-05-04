@@ -7,7 +7,8 @@ function generateUserToken(req, res) {
     const accessToken = generateAccessToken(req.user._id);
 
     //MANDO IL COOKIE COSì FA TUTTO IN AUTMATICO YEEEEEE
-    res.cookie('jwt', accessToken);
+    //Aggiungere flag secure: true se si ha HTTPS
+    res.cookie('jwt', accessToken, { maxAge: 3600 * 2 , httpOnly: true, sameSite: 'lax'});
 
     res.render('auth/authenticated');
 }

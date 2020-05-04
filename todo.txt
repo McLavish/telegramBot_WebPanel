@@ -1,12 +1,24 @@
+# TODO:
+
+Fare un sistema di gestione decente dei grafici di Chart.js
+Ristrutturare il login facendo delle pagine belle e non sti aborti
+Ristrutturare il progetto ordinandolo meglio
+Documentare tutto in inglese e non metà/metà
+Impostare i Redirect con un messaggio di login fallito (aggiungere query string al redirect)
+Fare una dashboard completa con tutti i grafici
+Collegarsi alle API del bot per mandare comandi/messaggi
+
+# Cosa ho imparato:
+
 Le session sono un metodo per salvare informazioni (salvare informazioni di sessione) lato server-side, l'utente non vede nulla.
 Però si hanno dei problemi quando si hanno sistemi distribuiti: si preferisce sistemi stateless (altrimenti è difficile coordinare i server).
 JWT: utile per autenticazione stateless, è l'utente che si occupa di salvare il token e ogni volta lo passa al server.
 
 (I cookie sono utili per lo storage di informazioni client-side
 Differenza cookie / sessione:
-Sessione: server-file 				Cookie: client-side-file
-Sessione: termina quando chiude il browser (+o-)Cookie: può persistere, ha un parametro lifetime
-Sessione: necessita i cookie per funzionare     Cookie: non necessita delle sessioni per funzionare
+Sessione: server-file 						Cookie: client-side-file
+Sessione: termina quando chiude il browser (+o-)		Cookie: può persistere, ha un parametro lifetime
+Sessione: necessita i cookie per collegare utente/sessione     	Cookie: non necessita delle sessioni per funzionare
 )
 
 Tipi di JWT:
