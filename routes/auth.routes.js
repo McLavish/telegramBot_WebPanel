@@ -8,7 +8,7 @@ function generateUserToken(req, res) {
 
     //MANDO IL COOKIE COSì FA TUTTO IN AUTMATICO YEEEEEE
     //Aggiungere flag secure: true se si ha HTTPS
-    res.cookie('jwt', accessToken, { maxAge: 3600 * 2 , httpOnly: true, sameSite: 'lax'});
+    res.cookie('jwt', accessToken, { maxAge: 3600000 , httpOnly: true, sameSite: 'lax'});
 
     res.render('auth/authenticated');
 }
